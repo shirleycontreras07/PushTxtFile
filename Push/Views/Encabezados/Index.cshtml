@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Push.Models.Encabezado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoArchivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoArchivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Identificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Periodo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EncabezadoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EncabezadoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EncabezadoId })
+        </td>
+    </tr>
+}
+
+</table>

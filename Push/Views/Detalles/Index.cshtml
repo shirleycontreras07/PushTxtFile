@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Push.Models.Detalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <div class="col-lg-12">
+        @Html.ActionLink("Exportar a Excel", "Exporta")
+    </div>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Encabezado.TipoRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoRegistro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoIdEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpleadoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sueldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SueldoNeto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoSeguridadSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Encabezado.TipoRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoRegistro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoIdEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpleadoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sueldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SueldoNeto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoSeguridadSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DetalleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DetalleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DetalleId })
+        </td>
+    </tr>
+}
+
+</table>
